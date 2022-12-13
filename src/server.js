@@ -52,10 +52,6 @@ nextApp.prepare().then(() => {
     .use(bodyParser.json())
     .use(bodyParser.urlencoded({ extended: true }))
     .use('/api', (req,res) => {res.json({message:'send 123213'})})  
-    .use(
-      '/checkout',
-      () => {}
-    )
     .get('*', (req, res) => {
       const parsedUrl = url.parse(req.url, true);
       nextHandler(req, res, parsedUrl);
